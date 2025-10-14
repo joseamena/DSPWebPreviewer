@@ -17,7 +17,7 @@ class AudioDSPProcessor {
   }
 
   private initializeAudioContext() {
-    this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
   }
 
   private setupEventListeners() {
