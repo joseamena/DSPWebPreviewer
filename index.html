@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSP Web Previewer - Guitar Impulse Response</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>🎸 DSP Web Previewer</h1>
+        <p class="tagline">Real-time Guitar Impulse Response Processing</p>
+      </header>
+
+      <main>
+        <section class="upload-section">
+          <div class="card">
+            <h2>⚡ Load Impulse Response</h2>
+            <div class="file-upload">
+              <input type="file" id="ir-upload" accept="audio/*" />
+              <label for="ir-upload" class="file-label">
+                <span id="ir-filename">Choose IR file...</span>
+              </label>
+            </div>
+            <div id="ir-info" class="info-box"></div>
+          </div>
+
+          <div class="card">
+            <h2>🎵 Load Audio Sample</h2>
+            <div class="file-upload">
+              <input type="file" id="sample-upload" accept="audio/*" />
+              <label for="sample-upload" class="file-label">
+                <span id="sample-filename">Choose audio sample...</span>
+              </label>
+            </div>
+            <div id="sample-info" class="info-box"></div>
+          </div>
+        </section>
+
+        <section class="player-section">
+          <div class="card player-card">
+            <h2>🔊 Audio Player</h2>
+            
+            <div class="controls">
+              <button id="play-dry" class="btn btn-primary" disabled>
+                ▶️ Play Dry (Original)
+              </button>
+              <button id="play-wet" class="btn btn-primary" disabled>
+                ▶️ Play Wet (Processed)
+              </button>
+              <button id="stop" class="btn btn-secondary" disabled>
+                ⏹️ Stop
+              </button>
+            </div>
+
+            <div class="processor-controls">
+              <div class="control-group">
+                <label for="dry-wet">Dry/Wet Mix</label>
+                <input type="range" id="dry-wet" min="0" max="100" value="100" />
+                <span id="dry-wet-value">100%</span>
+              </div>
+              
+              <div class="control-group">
+                <label for="volume">Volume</label>
+                <input type="range" id="volume" min="0" max="100" value="70" />
+                <span id="volume-value">70%</span>
+              </div>
+            </div>
+
+            <div id="status" class="status-box">Ready to load files</div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>Built with Web Audio API • Convolution Processing</p>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
