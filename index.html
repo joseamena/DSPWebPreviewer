@@ -4,28 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DSP Web Previewer - Guitar Impulse Response</title>
+    <title>AXTRAL IR LAB</title>
   </head>
   <body>
     <div id="app">
       <header>
-        <h1>🎸 DSP Web Previewer</h1>
-        <p class="tagline">Real-time Guitar Impulse Response Processing</p>
+        <h1>AXTRAL IR LAB</h1>
       </header>
 
       <main>
-        <section class="upload-section">
-          <div class="card">
-            <h2>⚡ Load Impulse Response</h2>
-            <div class="file-upload">
-              <input type="file" id="ir-upload" accept="audio/*" />
-              <label for="ir-upload" class="file-label">
-                <span id="ir-filename">Choose IR file...</span>
-              </label>
-            </div>
-            <div id="ir-info" class="info-box"></div>
-          </div>
-
+        <!-- Audio Sample Upload Section -->
+        <section class="sample-upload-section">
           <div class="card">
             <h2>🎵 Load Audio Sample</h2>
             <div class="file-upload">
@@ -38,44 +27,207 @@
           </div>
         </section>
 
+        <!-- IR Modules Grid -->
+        <section class="ir-modules-grid">
+          <!-- IR Module 1 -->
+          <div class="ir-module">
+            <h3>IR 1</h3>
+            <div class="ir-upload-btn">
+              <input type="file" id="ir-upload-1" accept="audio/*" />
+              <label for="ir-upload-1" class="ir-label">IR Upload</label>
+            </div>
+            <div class="ir-info-mini" id="ir-info-1"></div>
+            <div class="knobs-container">
+              <div class="knob-wrapper">
+                <div class="knob" data-module="1" data-param="gain">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>GAIN</label>
+              </div>
+              <div class="knob-wrapper">
+                <div class="knob" data-module="1" data-param="lowcut">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>LOW CUT</label>
+              </div>
+              <div class="knob-wrapper">
+                <div class="knob" data-module="1" data-param="highcut">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>HIGH CUT</label>
+              </div>
+            </div>
+            <div class="slider-container">
+              <label>PHASE</label>
+              <input type="range" class="ir-slider" id="phase-1" min="0" max="180" value="0" />
+            </div>
+          </div>
+
+          <!-- IR Module 2 -->
+          <div class="ir-module">
+            <h3>IR 2</h3>
+            <div class="ir-upload-btn">
+              <input type="file" id="ir-upload-2" accept="audio/*" />
+              <label for="ir-upload-2" class="ir-label">IR Upload</label>
+            </div>
+            <div class="ir-info-mini" id="ir-info-2"></div>
+            <div class="knobs-container">
+              <div class="knob-wrapper">
+                <div class="knob" data-module="2" data-param="gain">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>GAIN</label>
+              </div>
+              <div class="knob-wrapper">
+                <div class="knob" data-module="2" data-param="lowcut">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>LOW CUT</label>
+              </div>
+              <div class="knob-wrapper">
+                <div class="knob" data-module="2" data-param="highcut">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>HIGH CUT</label>
+              </div>
+            </div>
+            <div class="slider-container">
+              <label>PHASE</label>
+              <input type="range" class="ir-slider" id="phase-2" min="0" max="180" value="0" />
+            </div>
+          </div>
+
+          <!-- IR Module 3 -->
+          <div class="ir-module">
+            <h3>IR 3</h3>
+            <div class="ir-upload-btn">
+              <input type="file" id="ir-upload-3" accept="audio/*" />
+              <label for="ir-upload-3" class="ir-label">IR Upload</label>
+            </div>
+            <div class="ir-info-mini" id="ir-info-3"></div>
+            <div class="knobs-container">
+              <div class="knob-wrapper">
+                <div class="knob" data-module="3" data-param="gain">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>GAIN</label>
+              </div>
+              <div class="knob-wrapper">
+                <div class="knob" data-module="3" data-param="lowcut">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>LOW CUT</label>
+              </div>
+              <div class="knob-wrapper">
+                <div class="knob" data-module="3" data-param="highcut">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>HIGH CUT</label>
+              </div>
+            </div>
+            <div class="slider-container">
+              <label>PHASE</label>
+              <input type="range" class="ir-slider" id="phase-3" min="0" max="180" value="0" />
+            </div>
+          </div>
+
+          <!-- IR Module 4 -->
+          <div class="ir-module">
+            <h3>IR 4</h3>
+            <div class="ir-upload-btn">
+              <input type="file" id="ir-upload-4" accept="audio/*" />
+              <label for="ir-upload-4" class="ir-label">IR Upload</label>
+            </div>
+            <div class="ir-info-mini" id="ir-info-4"></div>
+            <div class="knobs-container">
+              <div class="knob-wrapper">
+                <div class="knob" data-module="4" data-param="gain">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>GAIN</label>
+              </div>
+              <div class="knob-wrapper">
+                <div class="knob" data-module="4" data-param="lowcut">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>LOW CUT</label>
+              </div>
+              <div class="knob-wrapper">
+                <div class="knob" data-module="4" data-param="highcut">
+                  <div class="knob-indicator"></div>
+                </div>
+                <label>HIGH CUT</label>
+              </div>
+            </div>
+            <div class="slider-container">
+              <label>PHASE</label>
+              <input type="range" class="ir-slider" id="phase-4" min="0" max="180" value="0" />
+            </div>
+          </div>
+        </section>
+
+        <!-- Player Section -->
         <section class="player-section">
-          <div class="card player-card">
-            <h2>🔊 Audio Player</h2>
-            
-            <div class="controls">
-              <button id="play-dry" class="btn btn-primary" disabled>
-                ▶️ Play Dry (Original)
-              </button>
-              <button id="play-wet" class="btn btn-primary" disabled>
-                ▶️ Play Wet (Processed)
-              </button>
-              <button id="stop" class="btn btn-secondary" disabled>
-                ⏹️ Stop
-              </button>
-            </div>
-
-            <div class="processor-controls">
-              <div class="control-group">
-                <label for="dry-wet">Dry/Wet Mix</label>
-                <input type="range" id="dry-wet" min="0" max="100" value="100" />
-                <span id="dry-wet-value">100%</span>
+          <div class="player-card">
+            <div class="master-controls">
+              <div class="master-control-module">
+                <h3>MASTER GAIN</h3>
+                <div class="knobs-container">
+                  <div class="knob-wrapper">
+                    <div class="knob" data-module="master" data-param="gain">
+                      <div class="knob-indicator"></div>
+                    </div>
+                    <label>GAIN</label>
+                  </div>
+                  <div class="knob-wrapper">
+                    <div class="knob" data-module="master" data-param="lowcut">
+                      <div class="knob-indicator"></div>
+                    </div>
+                    <label>LOW CUT</label>
+                  </div>
+                  <div class="knob-wrapper">
+                    <div class="knob" data-module="master" data-param="highcut">
+                      <div class="knob-indicator"></div>
+                    </div>
+                    <label>HIGH CUT</label>
+                  </div>
+                </div>
+                <div class="slider-container">
+                  <input type="range" id="master-gain-slider" min="0" max="100" value="70" />
+                </div>
               </div>
-              
-              <div class="control-group">
-                <label for="volume">Volume</label>
-                <input type="range" id="volume" min="0" max="100" value="70" />
-                <span id="volume-value">70%</span>
+
+              <div class="center-player">
+                <button id="play-btn" class="play-button" disabled>
+                  <span class="play-icon">▶</span>
+                </button>
+                <div id="status" class="status-text">Load audio sample to start</div>
+              </div>
+
+              <div class="master-control-module">
+                <h3>DRY/WET</h3>
+                <div class="knobs-container">
+                  <div class="knob-wrapper">
+                    <div class="knob" data-module="mix" data-param="dry">
+                      <div class="knob-indicator"></div>
+                    </div>
+                    <label>DRY</label>
+                  </div>
+                  <div class="knob-wrapper">
+                    <div class="knob" data-module="mix" data-param="wet">
+                      <div class="knob-indicator"></div>
+                    </div>
+                    <label>WET</label>
+                  </div>
+                </div>
+                <div class="slider-container">
+                  <input type="range" id="dry-wet-slider" min="0" max="100" value="100" />
+                </div>
               </div>
             </div>
-
-            <div id="status" class="status-box">Ready to load files</div>
           </div>
         </section>
       </main>
-
-      <footer>
-        <p>Built with Web Audio API • Convolution Processing</p>
-      </footer>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
